@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/25065/Desktop/leanote/BaiduSMSAPI.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="tool" content="leanote-desktop-app">
+<title>BaiduSMSAPI</title>
+<style>
+.tab{font-size:12px; margin-bottom: 10px;}
+.tab a{cursor:pointer;cursor:pointer;display:inline-block;margin-right:10px;color:#000}#tab-html{color:#ccc}
+
+.content-container .content-html{visibility: hidden;}
+.content-container.html .content-markdown{display:none}
+.content-container.html .content-html{display:block; visibility: visible;}
+.content-container.html #tab-markdown{color:#ccc}
+.content-container.html #tab-html{color:#000}
+.content-markdown {overflow: auto;}
+textarea {display: none;}
+
+*{font-family:"lucida grande","lucida sans unicode",lucida,helvetica,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+
+body {
+  margin: 0;
+}
+
+/*公用文字样式*/
+h1{font-size:30px}h2{font-size:24px}h3{font-size:18px}h4{font-size:14px}
+.note-container{
+    width:750px; 
+    margin:auto;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 10px #eee;
+}
+#title {
+  margin: 0;
+}
+table {
+    margin-bottom: 16px;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+}
+table th {
+    font-weight: bold;
+}
+
+table tr {
+    background-color: none;
+    border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+    background-color: rgb(247, 247, 249);
+}
+.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  padding: 6px 13px;
+}
+blockquote {
+  border-left-width:10px;
+  background-color:rgba(128,128,128,0.05);
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px;
+  padding:15px 20px;
+  border-left:5px solid rgba(128,128,128,0.075);
+}
+blockquote p {
+  margin-bottom:1.1em;
+  font-size:1em;
+  line-height:1.45
+}
+blockquote ul:last-child,blockquote ol:last-child {
+  margin-bottom:0
+}
+pre {
+  padding: 18px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 3px;
+  display: block;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  white-space: nowrap;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.footnote {
+  vertical-align: top;
+  position: relative;
+  top: -0.5em;
+  font-size: .8em;
+}
+
+hr {
+  margin:2em 0
+}
+img {
+  max-width:100%;
+  display: block;
+  margin: auto;
+}
+pre {
+  word-break:break-word
+}
+p,pre,pre.prettyprint,blockquote {
+  margin:0 0 1.1em
+}
+hr {
+  margin:2em 0
+}
+img {
+  max-width:100%
+}
+.sequence-diagram,.flow-chart {
+  text-align:center;
+  margin-bottom:1.1em
+}
+.sequence-diagram text,.flow-chart text {
+  font-size:15px !important;
+  font-family:"Source Sans Pro",sans-serif !important
+}
+.sequence-diagram [fill="#ffffff"],.flow-chart [fill="#ffffff"] {
+  fill:#f6f6f6
+}
+.sequence-diagram [stroke="#000000"],.flow-chart [stroke="#000000"] {
+  stroke:#3f3f3f
+}
+.sequence-diagram text[stroke="#000000"],.flow-chart text[stroke="#000000"] {
+  stroke:none
+}
+.sequence-diagram [fill="#000"],.flow-chart [fill="#000"],.sequence-diagram [fill="#000000"],.flow-chart [fill="#000000"],.sequence-diagram [fill="black"],.flow-chart [fill="black"] {
+  fill:#3f3f3f
+}
+ul,ol {
+  margin-bottom:1.1em
+}
+ul ul,ol ul,ul ol,ol ol {
+  margin-bottom:1.1em
+}
+kbd {
+  padding:.1em .6em;
+  border:1px solid rgba(63,63,63,0.25);
+  -webkit-box-shadow:0 1px 0 rgba(63,63,63,0.25);
+  box-shadow:0 1px 0 rgba(63,63,63,0.25);
+  font-size:.7em;
+  font-family:sans-serif;
+  background-color:#fff;
+  color:#333;
+  border-radius:3px;
+  display:inline-block;
+  margin:0 .1em;
+  white-space:nowrap
+}
+.toc ul {
+  list-style-type:none;
+  margin-bottom:15px
+}
+.m-todo-item {
+  list-style: none;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: inherit;
+  border-radius: 0;
+}
+</style>
+<!-- 该css供自定义样式 -->
+<link href="file:///C:/Users/25065/Desktop/leanote-markdown.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="note-container">
+		<h1 class="title" id="leanote-title">BaiduSMSAPI</h1>
+		<div class="content-container html" id="content-container">
+			<!-- 切换 -->
+			<div class="tab"><a id="tab-markdown">Markdown</a><a id="tab-html">HTML</a></div>
+			<textarea id="leanote-content-markdown">&lt;p&gt;详情请看&lt;a href="https://cloud.baidu.com/doc/SMS/API.html#.E7.9F.AD.E4.BF.A1.E4.B8.8B.E5.8F.91"&gt;百度云-简单消息服务SMS&lt;/a&gt;&lt;/p&gt;
+百度云没有C# SDK。只能调用他们的API实现。首先要认证。
+![](BaiduSMSAPI_files/58661c2dffd1182df4000000.png)
+![](BaiduSMSAPI_files/58661c43ffd1182df4000001.png)
+![](BaiduSMSAPI_files/58661c50ffd1182df4000002.png)
+
+---------
+
+**HTTP请求示例：**
+&gt;POST /bce/v2/message HTTP/1.1
+Host: sms.bj.baidubce.com
+x-bce-content-sha256:e3d5591edbab45d28817fcb1463501d9e68ecb9730f440ac975da368ca4adbfc
+x-bce-date:2014-06-11T08:23:49Z
+Content-Type: application/json
+Authorization:bce-auth-v1/AKIAIOSFODNN7EXAMPLE/1323937348/600//host;x-bce-date/=hQJj2pxypqJHQgU/BW1EZGUiNIYGhkQDf7tI6UgQ2qw=
+Content-Length: 151
+{
+    "invokeId": "d2iL60UT-7N8-22368",
+    "phoneNumber": "13800138000",
+    "templateCode": "smsTpl:6nHdNumZ4ZtGaKO",
+    "contentVar": {
+        "others": "你好",
+        "code": "7890"
+    }
+}
+
+-----
+
+**成功响应示例：**
+&gt;HTTP/1.1 200 OK
+Date: Thu, 12 Jun 2014 09:26:46 GMT
+Content-Type: application/json; charset=utf-8
+x-bce-request-id：98f651c-e230-4810f-8092-f77506d848
+{
+    "code": "1000",
+    "message": "成功",
+    "requestId": "98f651c-e230-4810f-8092-f77506d848"
+}
+
+--------
+
+C#版本的短信接口API开发：
+&gt;using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+namespace PictureTest.BaiduSMS
+{
+    public class SMSInfo
+    {
+        //模板
+        public string TemplateId { get; set; }
+        //接受者
+        public string Receiver { get; set; }
+        //内容
+        public string ContentVar { get; set; }
+    }
+}
+
+------
+
+&gt;using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Security.Cryptography;
+using System.Text;
+using System.Net;
+using System.IO.Compression;
+namespace PictureTest.BaiduSMS
+{
+    public class BaiduSMSTest
+    {
+        private SMSInfo smsinfo;
+        public SMSInfo Smsinfo
+        {
+            get { return smsinfo; }
+            set { smsinfo = value; }
+        }
+        public BaiduSMSTest(SMSInfo smsinfo)
+        {
+            this.smsinfo = smsinfo;
+        }
+        public string SendSMSWEBAPI()
+        {
+            try
+            {
+             System.IO.Stream  receiveStream  = null;
+            System.IO.StreamReader responseReader = null;
+            string timestamp =  DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+           // string timestamp2 As String = Date.UtcNow.ToString("yyyy-MM-dd")
+            string SecretAccessKey  = "申请所得";
+            string AccessKeyId  = "申请所得";
+         //   '  Dim authStringPrefix As String = "bce-auth-v1/{accessKeyId}/{timestamp}/{expirationPeriodInSeconds}"
+            string authStringPrefix = string.Format("bce-auth-v1/{1}/{0}/1800", timestamp, AccessKeyId);// '这里要改
+          //  ' Dim CanonicalRequest As String = "HTTP Method + "\n" + CanonicalURI + "\n" + CanonicalQueryString + "\n" + CanonicalHeaders"
+            string CanonicalRequest = string.Format("POST" + "\n" + "/v1/message" + "\n" + "\n" + "host:sms.bj.baidubce.com");
+            string SigningKey  = GetSigningKeyByHMACSHA256HEX(SecretAccessKey, authStringPrefix);
+            string Signature  = GetSignatureByHMACSHA256HEX(SigningKey, CanonicalRequest);
+            string Content = string.Empty;
+          // Content = "{ \"templateId\":" + smsinfo.TemplateId + ",\"receiver\":" + smsinfo.Receiver + ",\"contentVar\":" + smsinfo.ContentVar + "}";
+            Content = "{"+"\""+"templateId"+"\""+":" + smsinfo.TemplateId + ","+"\""+"receiver"+"\""+":" + smsinfo.Receiver + ","+"\""+"contentVar"+"\""+":" + smsinfo.ContentVar + "}";
+           string temp = Content.ToString();
+           byte[] ContentByte = Encoding.UTF8.GetBytes(temp);
+            string GetOrderURL  = new  Uri("http://sms.bj.baidubce.com/v1/message").ToString();
+            System.Net.HttpWebRequest HttpWReq  =(WebRequest.Create(GetOrderURL) as System.Net.HttpWebRequest);
+            //' HttpWReq.Timeout = 600 * 1000 ''一分钟查询
+            HttpWReq.ContentLength = ContentByte.Length;
+            HttpWReq.ContentType = "application/json";
+            HttpWReq.Headers["x-bce-date"] = timestamp;
+            HttpWReq.Headers["Authorization"] = string.Format("bce-auth-v1/{2}/{0}/1800/host/{1}", timestamp, Signature, AccessKeyId);
+            HttpWReq.Host = "sms.bj.baidubce.com";
+            HttpWReq.Method = "POST";
+            HttpWReq.KeepAlive = false;
+            System.IO.Stream StreamData   = HttpWReq.GetRequestStream();
+            StreamData.Write(ContentByte, 0, ContentByte.Length);
+            StreamData.Close();
+            System.Net.HttpWebResponse  HttpWRes  =(System.Net.HttpWebResponse) HttpWReq.GetResponse();
+            if (HttpWRes.Headers.Get("Content-Encoding") == "gzip" ){
+                System.IO.Stream  zipStream = HttpWRes.GetResponseStream();
+                receiveStream = new  GZipStream(zipStream, CompressionMode.Decompress);
+            }else
+            {
+                receiveStream = HttpWRes.GetResponseStream();
+            }
+            responseReader = new  System.IO.StreamReader(receiveStream);
+            string responseString  = responseReader.ReadToEnd();
+            return responseString;
+            }
+            catch (Exception ex)
+            {  
+                throw ex;
+            }
+        }
+          public string  GetSigningKeyByHMACSHA256HEX(String SecretAccessKey  , String authStringPrefix ){
+           HMACSHA256 Livehmacsha256 = new  HMACSHA256(Encoding.UTF8.GetBytes(SecretAccessKey));
+          byte[] LiveHash  = Livehmacsha256.ComputeHash(Encoding.UTF8.GetBytes(authStringPrefix));
+          string SigningKey  = HashEncode(LiveHash);
+          return SigningKey;
+          }
+          public string GetSignatureByHMACSHA256HEX( String SigningKey , String CanonicalRequest) {
+          HMACSHA256 Livehmacsha256   = new  HMACSHA256(Encoding.UTF8.GetBytes(SigningKey));
+          byte[] LiveHash  = Livehmacsha256.ComputeHash(Encoding.UTF8.GetBytes(CanonicalRequest));
+          string   Signature  = HashEncode(LiveHash);
+          return Signature;}    
+       //将字符串全部变成小写。
+        public string  HashEncode(byte[] hash) {
+        return BitConverter.ToString(hash).Replace("-", "").ToLower();
+       }
+        public string GetSHA256hash(string input , string _input_charset ){
+        byte[] clearBytes  = Encoding.UTF8.GetBytes(input);
+        SHA256 sha256  = new  SHA256Managed();
+        sha256.ComputeHash(clearBytes);
+        byte[] hashedBytes = sha256.Hash;
+        sha256.Clear();
+        string   output = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+        return output;
+       }
+    }
+}
+
+-------
+
+测试代码：
+&gt;protected void btntest_Click(object sender, EventArgs e)
+        { 
+          SMSInfo SMSinfo   = new  SMSInfo();
+          SMSinfo.TemplateId = "\""+"短信模版"+"\"";
+          SMSinfo.Receiver = "["+"\""+手机号码+"\""+"]";
+          SMSinfo.ContentVar = "{\"参数一\":\"zhangsan \",\"参数二\":\"99999 \",\"参数三\":\"我是测试内容\"}";
+          BaiduSMSTest bdsms   = new  BaiduSMSTest(SMSinfo);
+         string result  = bdsms.SendSMSWEBAPI();
+    }
+&lt;/code&gt;</textarea>
+			<!-- markdown -->
+			<pre class="content-markdown"><p>详情请看<a href="https://cloud.baidu.com/doc/SMS/API.html#.E7.9F.AD.E4.BF.A1.E4.B8.8B.E5.8F.91">百度云-简单消息服务SMS</a></p>
+百度云没有C# SDK。只能调用他们的API实现。首先要认证。
+![](BaiduSMSAPI_files/58661c2dffd1182df4000000.png)
+![](BaiduSMSAPI_files/58661c43ffd1182df4000001.png)
+![](BaiduSMSAPI_files/58661c50ffd1182df4000002.png)
+
+---------
+
+**HTTP请求示例：**
+&gt;POST /bce/v2/message HTTP/1.1
+Host: sms.bj.baidubce.com
+x-bce-content-sha256:e3d5591edbab45d28817fcb1463501d9e68ecb9730f440ac975da368ca4adbfc
+x-bce-date:2014-06-11T08:23:49Z
+Content-Type: application/json
+Authorization:bce-auth-v1/AKIAIOSFODNN7EXAMPLE/1323937348/600//host;x-bce-date/=hQJj2pxypqJHQgU/BW1EZGUiNIYGhkQDf7tI6UgQ2qw=
+Content-Length: 151
+{
+    "invokeId": "d2iL60UT-7N8-22368",
+    "phoneNumber": "13800138000",
+    "templateCode": "smsTpl:6nHdNumZ4ZtGaKO",
+    "contentVar": {
+        "others": "你好",
+        "code": "7890"
+    }
+}
+
+-----
+
+**成功响应示例：**
+&gt;HTTP/1.1 200 OK
+Date: Thu, 12 Jun 2014 09:26:46 GMT
+Content-Type: application/json; charset=utf-8
+x-bce-request-id：98f651c-e230-4810f-8092-f77506d848
+{
+    "code": "1000",
+    "message": "成功",
+    "requestId": "98f651c-e230-4810f-8092-f77506d848"
+}
+
+--------
+
+C#版本的短信接口API开发：
+&gt;using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+namespace PictureTest.BaiduSMS
+{
+    public class SMSInfo
+    {
+        //模板
+        public string TemplateId { get; set; }
+        //接受者
+        public string Receiver { get; set; }
+        //内容
+        public string ContentVar { get; set; }
+    }
+}
+
+------
+
+&gt;using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Security.Cryptography;
+using System.Text;
+using System.Net;
+using System.IO.Compression;
+namespace PictureTest.BaiduSMS
+{
+    public class BaiduSMSTest
+    {
+        private SMSInfo smsinfo;
+        public SMSInfo Smsinfo
+        {
+            get { return smsinfo; }
+            set { smsinfo = value; }
+        }
+        public BaiduSMSTest(SMSInfo smsinfo)
+        {
+            this.smsinfo = smsinfo;
+        }
+        public string SendSMSWEBAPI()
+        {
+            try
+            {
+             System.IO.Stream  receiveStream  = null;
+            System.IO.StreamReader responseReader = null;
+            string timestamp =  DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+           // string timestamp2 As String = Date.UtcNow.ToString("yyyy-MM-dd")
+            string SecretAccessKey  = "申请所得";
+            string AccessKeyId  = "申请所得";
+         //   '  Dim authStringPrefix As String = "bce-auth-v1/{accessKeyId}/{timestamp}/{expirationPeriodInSeconds}"
+            string authStringPrefix = string.Format("bce-auth-v1/{1}/{0}/1800", timestamp, AccessKeyId);// '这里要改
+          //  ' Dim CanonicalRequest As String = "HTTP Method + "\n" + CanonicalURI + "\n" + CanonicalQueryString + "\n" + CanonicalHeaders"
+            string CanonicalRequest = string.Format("POST" + "\n" + "/v1/message" + "\n" + "\n" + "host:sms.bj.baidubce.com");
+            string SigningKey  = GetSigningKeyByHMACSHA256HEX(SecretAccessKey, authStringPrefix);
+            string Signature  = GetSignatureByHMACSHA256HEX(SigningKey, CanonicalRequest);
+            string Content = string.Empty;
+          // Content = "{ \"templateId\":" + smsinfo.TemplateId + ",\"receiver\":" + smsinfo.Receiver + ",\"contentVar\":" + smsinfo.ContentVar + "}";
+            Content = "{"+"\""+"templateId"+"\""+":" + smsinfo.TemplateId + ","+"\""+"receiver"+"\""+":" + smsinfo.Receiver + ","+"\""+"contentVar"+"\""+":" + smsinfo.ContentVar + "}";
+           string temp = Content.ToString();
+           byte[] ContentByte = Encoding.UTF8.GetBytes(temp);
+            string GetOrderURL  = new  Uri("http://sms.bj.baidubce.com/v1/message").ToString();
+            System.Net.HttpWebRequest HttpWReq  =(WebRequest.Create(GetOrderURL) as System.Net.HttpWebRequest);
+            //' HttpWReq.Timeout = 600 * 1000 ''一分钟查询
+            HttpWReq.ContentLength = ContentByte.Length;
+            HttpWReq.ContentType = "application/json";
+            HttpWReq.Headers["x-bce-date"] = timestamp;
+            HttpWReq.Headers["Authorization"] = string.Format("bce-auth-v1/{2}/{0}/1800/host/{1}", timestamp, Signature, AccessKeyId);
+            HttpWReq.Host = "sms.bj.baidubce.com";
+            HttpWReq.Method = "POST";
+            HttpWReq.KeepAlive = false;
+            System.IO.Stream StreamData   = HttpWReq.GetRequestStream();
+            StreamData.Write(ContentByte, 0, ContentByte.Length);
+            StreamData.Close();
+            System.Net.HttpWebResponse  HttpWRes  =(System.Net.HttpWebResponse) HttpWReq.GetResponse();
+            if (HttpWRes.Headers.Get("Content-Encoding") == "gzip" ){
+                System.IO.Stream  zipStream = HttpWRes.GetResponseStream();
+                receiveStream = new  GZipStream(zipStream, CompressionMode.Decompress);
+            }else
+            {
+                receiveStream = HttpWRes.GetResponseStream();
+            }
+            responseReader = new  System.IO.StreamReader(receiveStream);
+            string responseString  = responseReader.ReadToEnd();
+            return responseString;
+            }
+            catch (Exception ex)
+            {  
+                throw ex;
+            }
+        }
+          public string  GetSigningKeyByHMACSHA256HEX(String SecretAccessKey  , String authStringPrefix ){
+           HMACSHA256 Livehmacsha256 = new  HMACSHA256(Encoding.UTF8.GetBytes(SecretAccessKey));
+          byte[] LiveHash  = Livehmacsha256.ComputeHash(Encoding.UTF8.GetBytes(authStringPrefix));
+          string SigningKey  = HashEncode(LiveHash);
+          return SigningKey;
+          }
+          public string GetSignatureByHMACSHA256HEX( String SigningKey , String CanonicalRequest) {
+          HMACSHA256 Livehmacsha256   = new  HMACSHA256(Encoding.UTF8.GetBytes(SigningKey));
+          byte[] LiveHash  = Livehmacsha256.ComputeHash(Encoding.UTF8.GetBytes(CanonicalRequest));
+          string   Signature  = HashEncode(LiveHash);
+          return Signature;}    
+       //将字符串全部变成小写。
+        public string  HashEncode(byte[] hash) {
+        return BitConverter.ToString(hash).Replace("-", "").ToLower();
+       }
+        public string GetSHA256hash(string input , string _input_charset ){
+        byte[] clearBytes  = Encoding.UTF8.GetBytes(input);
+        SHA256 sha256  = new  SHA256Managed();
+        sha256.ComputeHash(clearBytes);
+        byte[] hashedBytes = sha256.Hash;
+        sha256.Clear();
+        string   output = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+        return output;
+       }
+    }
+}
+
+-------
+
+测试代码：
+&gt;protected void btntest_Click(object sender, EventArgs e)
+        { 
+          SMSInfo SMSinfo   = new  SMSInfo();
+          SMSinfo.TemplateId = "\""+"短信模版"+"\"";
+          SMSinfo.Receiver = "["+"\""+手机号码+"\""+"]";
+          SMSinfo.ContentVar = "{\"参数一\":\"zhangsan \",\"参数二\":\"99999 \",\"参数三\":\"我是测试内容\"}";
+          BaiduSMSTest bdsms   = new  BaiduSMSTest(SMSinfo);
+         string result  = bdsms.SendSMSWEBAPI();
+    }
+</pre>
+			<!-- html -->
+			<div class="content-html" id="leanote-content-html"><p>详情请看<a href="https://cloud.baidu.com/doc/SMS/API.html#.E7.9F.AD.E4.BF.A1.E4.B8.8B.E5.8F.91">百度云-简单消息服务SMS</a></p>
+
+<p>百度云没有C# SDK。只能调用他们的API实现。首先要认证。 <br>
+<img src="./BaiduSMSAPI_files/58661c2dffd1182df4000000.png" alt="" title=""> <br>
+<img src="./BaiduSMSAPI_files/58661c43ffd1182df4000001.png" alt="" title=""> <br>
+<img src="./BaiduSMSAPI_files/58661c50ffd1182df4000002.png" alt="" title=""></p>
+
+<hr>
+
+<p><strong>HTTP请求示例：</strong></p>
+
+<blockquote>
+  <p>POST /bce/v2/message HTTP/1.1 <br>
+  Host: sms.bj.baidubce.com <br>
+  x-bce-content-sha256:e3d5591edbab45d28817fcb1463501d9e68ecb9730f440ac975da368ca4adbfc <br>
+  x-bce-date:2014-06-11T08:23:49Z <br>
+  Content-Type: application/json <br>
+  Authorization:bce-auth-v1/AKIAIOSFODNN7EXAMPLE/1323937348/600//host;x-bce-date/=hQJj2pxypqJHQgU/BW1EZGUiNIYGhkQDf7tI6UgQ2qw= <br>
+  Content-Length: 151 <br>
+  { <br>
+      “invokeId”: “d2iL60UT-7N8-22368”, <br>
+      “phoneNumber”: “13800138000”, <br>
+      “templateCode”: “smsTpl:6nHdNumZ4ZtGaKO”, <br>
+      “contentVar”: { <br>
+          “others”: “你好”, <br>
+          “code”: “7890” <br>
+      } <br>
+  }</p>
+</blockquote>
+
+<hr>
+
+<p><strong>成功响应示例：</strong></p>
+
+<blockquote>
+  <p>HTTP/1.1 200 OK <br>
+  Date: Thu, 12 Jun 2014 09:26:46 GMT <br>
+  Content-Type: application/json; charset=utf-8 <br>
+  x-bce-request-id：98f651c-e230-4810f-8092-f77506d848 <br>
+  { <br>
+      “code”: “1000”, <br>
+      “message”: “成功”, <br>
+      “requestId”: “98f651c-e230-4810f-8092-f77506d848” <br>
+  }</p>
+</blockquote>
+
+<hr>
+
+<p>C#版本的短信接口API开发：</p>
+
+<blockquote>
+  <p>using System; <br>
+  using System.Collections.Generic; <br>
+  using System.Linq; <br>
+  using System.Web; <br>
+  namespace PictureTest.BaiduSMS <br>
+  { <br>
+      public class SMSInfo <br>
+      { <br>
+          //模板 <br>
+          public string TemplateId { get; set; } <br>
+          //接受者 <br>
+          public string Receiver { get; set; } <br>
+          //内容 <br>
+          public string ContentVar { get; set; } <br>
+      } <br>
+  }</p>
+</blockquote>
+
+<hr>
+
+<blockquote>
+  <p>using System; <br>
+  using System.Collections.Generic; <br>
+  using System.Linq; <br>
+  using System.Web; <br>
+  using System.Security.Cryptography; <br>
+  using System.Text; <br>
+  using System.Net; <br>
+  using System.IO.Compression; <br>
+  namespace PictureTest.BaiduSMS <br>
+  { <br>
+      public class BaiduSMSTest <br>
+      { <br>
+          private SMSInfo smsinfo; <br>
+          public SMSInfo Smsinfo <br>
+          { <br>
+              get { return smsinfo; } <br>
+              set { smsinfo = value; } <br>
+          } <br>
+          public BaiduSMSTest(SMSInfo smsinfo) <br>
+          { <br>
+              this.smsinfo = smsinfo; <br>
+          } <br>
+          public string SendSMSWEBAPI() <br>
+          { <br>
+              try <br>
+              { <br>
+               System.IO.Stream  receiveStream  = null; <br>
+              System.IO.StreamReader responseReader = null; <br>
+              string timestamp =  DateTime.UtcNow.ToString(“yyyy-MM-ddTHH:mm:ssZ”); <br>
+             // string timestamp2 As String = Date.UtcNow.ToString(“yyyy-MM-dd”) <br>
+              string SecretAccessKey  = “申请所得”; <br>
+              string AccessKeyId  = “申请所得”; <br>
+           //   ’  Dim authStringPrefix As String = “bce-auth-v1/{accessKeyId}/{timestamp}/{expirationPeriodInSeconds}” <br>
+              string authStringPrefix = string.Format(“bce-auth-v1/{1}/{0}/1800”, timestamp, AccessKeyId);// ‘这里要改 <br>
+            //  ’ Dim CanonicalRequest As String = “HTTP Method + “\n” + CanonicalURI + “\n” + CanonicalQueryString + “\n” + CanonicalHeaders” <br>
+              string CanonicalRequest = string.Format(“POST” + “\n” + “/v1/message” + “\n” + “\n” + “host:sms.bj.baidubce.com”); <br>
+              string SigningKey  = GetSigningKeyByHMACSHA256HEX(SecretAccessKey, authStringPrefix); <br>
+              string Signature  = GetSignatureByHMACSHA256HEX(SigningKey, CanonicalRequest); <br>
+              string Content = string.Empty; <br>
+            // Content = “{ \”templateId\”:” + smsinfo.TemplateId + “,\”receiver\”:” + smsinfo.Receiver + “,\”contentVar\”:” + smsinfo.ContentVar + “}”; <br>
+              Content = “{“+”\”“+”templateId”+”\”“+”:” + smsinfo.TemplateId + “,”+”\”“+”receiver”+”\”“+”:” + smsinfo.Receiver + “,”+”\”“+”contentVar”+”\”“+”:” + smsinfo.ContentVar + “}”; <br>
+             string temp = Content.ToString(); <br>
+             byte[] ContentByte = Encoding.UTF8.GetBytes(temp); <br>
+              string GetOrderURL  = new  Uri(“<a href="http://sms.bj.baidubce.com/v1/message">http://sms.bj.baidubce.com/v1/message</a>“).ToString(); <br>
+              System.Net.HttpWebRequest HttpWReq  =(WebRequest.Create(GetOrderURL) as System.Net.HttpWebRequest); <br>
+              //’ HttpWReq.Timeout = 600 * 1000 ”一分钟查询 <br>
+              HttpWReq.ContentLength = ContentByte.Length; <br>
+              HttpWReq.ContentType = “application/json”; <br>
+              HttpWReq.Headers[“x-bce-date”] = timestamp; <br>
+              HttpWReq.Headers[“Authorization”] = string.Format(“bce-auth-v1/{2}/{0}/1800/host/{1}”, timestamp, Signature, AccessKeyId); <br>
+              HttpWReq.Host = “sms.bj.baidubce.com”; <br>
+              HttpWReq.Method = “POST”; <br>
+              HttpWReq.KeepAlive = false; <br>
+              System.IO.Stream StreamData   = HttpWReq.GetRequestStream(); <br>
+              StreamData.Write(ContentByte, 0, ContentByte.Length); <br>
+              StreamData.Close(); <br>
+              System.Net.HttpWebResponse  HttpWRes  =(System.Net.HttpWebResponse) HttpWReq.GetResponse(); <br>
+              if (HttpWRes.Headers.Get(“Content-Encoding”) == “gzip” ){ <br>
+                  System.IO.Stream  zipStream = HttpWRes.GetResponseStream(); <br>
+                  receiveStream = new  GZipStream(zipStream, CompressionMode.Decompress); <br>
+              }else <br>
+              { <br>
+                  receiveStream = HttpWRes.GetResponseStream(); <br>
+              } <br>
+              responseReader = new  System.IO.StreamReader(receiveStream); <br>
+              string responseString  = responseReader.ReadToEnd(); <br>
+              return responseString; <br>
+              } <br>
+              catch (Exception ex) <br>
+              { <br>
+                  throw ex; <br>
+              } <br>
+          } <br>
+            public string  GetSigningKeyByHMACSHA256HEX(String SecretAccessKey  , String authStringPrefix ){ <br>
+             HMACSHA256 Livehmacsha256 = new  HMACSHA256(Encoding.UTF8.GetBytes(SecretAccessKey)); <br>
+            byte[] LiveHash  = Livehmacsha256.ComputeHash(Encoding.UTF8.GetBytes(authStringPrefix)); <br>
+            string SigningKey  = HashEncode(LiveHash); <br>
+            return SigningKey; <br>
+            } <br>
+            public string GetSignatureByHMACSHA256HEX( String SigningKey , String CanonicalRequest) { <br>
+            HMACSHA256 Livehmacsha256   = new  HMACSHA256(Encoding.UTF8.GetBytes(SigningKey)); <br>
+            byte[] LiveHash  = Livehmacsha256.ComputeHash(Encoding.UTF8.GetBytes(CanonicalRequest)); <br>
+            string   Signature  = HashEncode(LiveHash); <br>
+            return Signature;} <br>
+         //将字符串全部变成小写。 <br>
+          public string  HashEncode(byte[] hash) { <br>
+          return BitConverter.ToString(hash).Replace(“-“, “”).ToLower(); <br>
+         } <br>
+          public string GetSHA256hash(string input , string _input_charset ){ <br>
+          byte[] clearBytes  = Encoding.UTF8.GetBytes(input); <br>
+          SHA256 sha256  = new  SHA256Managed(); <br>
+          sha256.ComputeHash(clearBytes); <br>
+          byte[] hashedBytes = sha256.Hash; <br>
+          sha256.Clear(); <br>
+          string   output = BitConverter.ToString(hashedBytes).Replace(“-“, “”).ToLower(); <br>
+          return output; <br>
+         } <br>
+      } <br>
+  }</p>
+</blockquote>
+
+<hr>
+
+<p>测试代码：</p>
+
+<blockquote>
+  <p>protected void btntest_Click(object sender, EventArgs e) <br>
+          {  <br>
+            SMSInfo SMSinfo   = new  SMSInfo(); <br>
+            SMSinfo.TemplateId = “\”“+”短信模版”+”\”“; <br>
+            SMSinfo.Receiver = “[“+”\”“+手机号码+”\”“+”]”; <br>
+            SMSinfo.ContentVar = “{\”参数一\”:\”zhangsan \”,\”参数二\”:\”99999 \”,\”参数三\”:\”我是测试内容\”}”; <br>
+            BaiduSMSTest bdsms   = new  BaiduSMSTest(SMSinfo); <br>
+           string result  = bdsms.SendSMSWEBAPI(); <br>
+      } <br>
+  </p>
+</blockquote></div>
+		</div>
+	</div>
+
+<!-- 该js供其它处理 -->
+<script src="file:///C:/Users/25065/Desktop/leanote-markdown.js"></script>
+<script src="./BaiduSMSAPI_files/markdown-to-html.min.js"></script>
+<script>
+function init() {
+	markdownToHtml(document.getElementById('leanote-content-markdown').value, document.getElementById('leanote-content-html'), function(html) {
+		// 解析后执行
+		if(window.markdownParsed) {
+			window.markdownParsed(html);
+		}
+	});
+	var $m = document.getElementById('tab-markdown');
+	var $h = document.getElementById('tab-html');
+	var $cc = document.getElementById('content-container');
+	function toggleToHtml(isToHtml) {
+		$cc.className = isToHtml ? 'content-container html' : 'content-container';
+	}
+	$m.addEventListener('click', function() {
+		toggleToHtml(false);
+	});
+	$h.addEventListener('click', function() {
+		toggleToHtml(true);
+	});
+}
+
+// 如果不要自动解析html, notParseMarkdown在leanote-markdown.js中定义
+if(!window.notParseMarkdown) {
+	init();
+}
+</script>
+
+</body></html>
