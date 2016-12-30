@@ -165,7 +165,7 @@ kbd {
 </style>
 <!-- 该css供自定义样式 -->
 <link href="file:///C:/Users/25065/Desktop/leanote-markdown.css" rel="stylesheet">
-<script type="text/javascript" src="./MysqlLearnOne_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+<script type="text/javascript" src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
 .MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
 </style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
 .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
@@ -855,9 +855,9 @@ MySQL总是通过创建临时表的方式来执行UNION操作，经常需要通�
 <p>一些典型的情况： <br>
 （1）查询不需要的记录。这样的查询上应该加上LIMIT（错误做法：先使用SELECT语句查询大量的结果，然后获取前面的N行后关闭结果集） <br>
 （2）多表关联时返回了全部列。应该只取需要的列。（错误做法： <br>
-<img src="./MysqlLearnOne_files/5860967a9965f62a56000000.png" alt="" title=""><br> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860967a9965f62a56000000.png" alt="" title=""><br> <br>
 正确做法： <br>
-<img src="./MysqlLearnOne_files/586096c39965f62a56000001.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/586096c39965f62a56000001.png" alt="" title=""> <br>
 ） <br>
 （3）总是取出全部的列：SELECT *；（另外用途：如果应用程序有缓存机制的话，可以考虑） <br>
 （4）重复查询需要的数据。较好的解决方案是使用数据缓存。</p>
@@ -879,11 +879,11 @@ MySQL总是通过创建临时表的方式来执行UNION操作，经常需要通�
 
 <blockquote>
   <p>例子： <br>
-  <img src="./MysqlLearnOne_files/58609dbe9965f62a56000002.png" alt="" title=""> <br>
-  <img src="./MysqlLearnOne_files/58609dd99965f62a56000003.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/58609dbe9965f62a56000002.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/58609dd99965f62a56000003.png" alt="" title=""> <br>
   EXPLAIN的结果显示Mysql预估需要访问10行数据 <br>
   没有索引的情况下，删除对应的索引再来运行这个查询 <br>
-  <img src="./MysqlLearnOne_files/58609e739965f62a56000004.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/58609e739965f62a56000004.png" alt="" title=""> <br>
   访问类型变成了一个全表扫描（ALL）,预估需要扫描5073条记录。</p>
 </blockquote>
 
@@ -908,9 +908,9 @@ MySQL总是通过创建临时表的方式来执行UNION操作，经常需要通�
 <h4 id="title-6">6.3.3 分解关联查询</h4>
 
 <p>很多高性能的应用都会对关联查询进行分解。简单做法，对每一个表进行一次单表查询，然后将结果在应用程序中进行关联。例如： <br>
-<img src="./MysqlLearnOne_files/5860a3459965f62a56000005.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860a3459965f62a56000005.png" alt="" title=""> <br>
 可以分解成下面这些查询来代替： <br>
-<img src="./MysqlLearnOne_files/5860a35e9965f62a56000006.png" alt="" title=""></p>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860a35e9965f62a56000006.png" alt="" title=""></p>
 
 <p>用分解关联查询的方式重构查询的优势： <br>
 （1）让缓存的效率更高。 <br>
@@ -963,7 +963,7 @@ MySQL通过关键字将SQL语句进行解析，并生成一颗对应的“解析
 
 <blockquote>
   <p>例如: <br>
-  <img src="./MysqlLearnOne_files/5860b7cf9965f62a56000007.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860b7cf9965f62a56000007.png" alt="" title=""> <br>
   这个结果表示Mysql的优化器认为大概需要做1040个数据页的随机查找才能完成上面的查询。优化器在评估成本的时候并不考虑任何层面的缓存，它假设读取任何数据都需要一次磁盘I/O</p>
 </blockquote>
 
@@ -990,14 +990,14 @@ MySQL通过关键字将SQL语句进行解析，并生成一颗对应的“解析
 
 <blockquote>
   <p>例如： <br>
-  <img src="./MysqlLearnOne_files/5860ca7d9965f62a56000008.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860ca7d9965f62a56000008.png" alt="" title=""> <br>
   Mysql顺序可以为:film-&gt;film_actor-&gt;actor <br>
   Oracle用户描述:film表为驱动表，先查找file_actor表，再以此结果为驱动表再查找actor表。 <br>
   EXPLAIN的结果： <br>
-  <img src="./MysqlLearnOne_files/5860cc979965f62a56000009.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860cc979965f62a56000009.png" alt="" title=""> <br>
   优化器选择的Mysql顺序：actor-&gt;film_actor-&gt;film <br>
   使用STRAIGHT_JOIN关键字，强制按照查询顺序执行，对应的EXPLAIN输出结果： <br>
-  <img src="./MysqlLearnOne_files/5860cd759965f62a5600000a.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860cd759965f62a5600000a.png" alt="" title=""> <br>
   验证优化器选择正确的方法：单独执行上面两个查询，查看对应的Last_query_cost状态值。</p>
 </blockquote>
 
@@ -1025,49 +1025,49 @@ MySQL通过关键字将SQL语句进行解析，并生成一颗对应的“解析
 
 <blockquote>
   <p>例如： <br>
-  <img src="./MysqlLearnOne_files/5860d4d79965f62a5600000c.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860d4d79965f62a5600000c.png" alt="" title=""> <br>
   常规认为mysql会先执行子查询返回所有actor_id为1的film_id. <br>
-  <img src="./MysqlLearnOne_files/5860d5179965f62a5600000d.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860d5179965f62a5600000d.png" alt="" title=""> <br>
   mysql不会这样做。mysql会将查询改写成： <br>
-  <img src="./MysqlLearnOne_files/5860d5c69965f62a5600000e.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860d5c69965f62a5600000e.png" alt="" title=""> <br>
   这时，子查询需要根据film_id来关联外部表film，因为需要film_id字段，所以mysql认为无法先执行这个子查询。 <br>
   EXPLAIN的结果： <br>
-  <img src="./MysqlLearnOne_files/5860d6ae9965f62a5600000f.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860d6ae9965f62a5600000f.png" alt="" title=""> <br>
   mysql先选择对file表进行全表扫描，然后根据返回的film_id逐个执行子查询。如果外层的表是一个非常大的表，这个查询的性能会非常糟糕。 <br>
   第一个优化方法，重写这个查询： <br>
-  <img src="./MysqlLearnOne_files/5860d7e49965f62a56000010.png" alt="" title=""> <br>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860d7e49965f62a56000010.png" alt="" title=""> <br>
   第二个优化方法，使用函数GROUP_CONCAT()在IN()中构造一个由逗号分隔的列表，有时这比上面的使用关联改写更快。 <br>
   第三个优化方法，使用IN()加子查询，性能经常会非常糟，建议使用EXISTS()等效的改写查询来获取更好的效率。如： <br>
-  <img src="./MysqlLearnOne_files/5860d9299965f62a56000011.png" alt="" title=""></p>
+  <img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860d9299965f62a56000011.png" alt="" title=""></p>
 </blockquote>
 
 <p><strong>如何用好关联子查询</strong> <br>
 并不是所有关联子查询的性能都会很差，很多时候，关联子查询是一种非常合理、自然甚至是性能最好的写法。 <br>
 例子①如： <br>
-<img src="./MysqlLearnOne_files/5860e9359965f62a56000012.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860e9359965f62a56000012.png" alt="" title=""> <br>
 一般会建议使用左外连接（LEFT OUTER JOIN）重写该查询，以代替子查询。理论上，改写后Mysql的执行计划完全不会改变。 <br>
-<img src="./MysqlLearnOne_files/5860ec889965f62a56000013.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860ec889965f62a56000013.png" alt="" title=""> <br>
 测试比较 <br>
-<img src="./MysqlLearnOne_files/5860ecec9965f62a56000014.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860ecec9965f62a56000014.png" alt="" title=""> <br>
 使用子查询的写法要略微慢些！</p>
 
 <p>例子②，当返回结果中只有一个表中的某些列的时候，对于关联查询效率好，如： <br>
 关联子查询： <br>
-<img src="./MysqlLearnOne_files/5860f8c09965f62a56000015.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860f8c09965f62a56000015.png" alt="" title=""> <br>
 使用EXISTS <br>
-<img src="./MysqlLearnOne_files/5860f94e9965f62a56000016.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860f94e9965f62a56000016.png" alt="" title=""> <br>
 测试比较： <br>
-<img src="./MysqlLearnOne_files/5860f9659965f62a56000017.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860f9659965f62a56000017.png" alt="" title=""> <br>
 在这个案例中，子查询速度要比关联查询更快些</p>
 
 <h4 id="title-14">6.5.2 UNION的限制（无法将限制条件从外层下推到内层）</h4>
 
 <p>例子①，想将两个子查询结果联合起来，然后再取前20条记录，mysql会将两个表都存放到同一个临时表中，然后再取出前20行记录： <br>
-<img src="./MysqlLearnOne_files/5860fdfd9965f62a56000018.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860fdfd9965f62a56000018.png" alt="" title=""> <br>
 分析：这条查询将会把actor中的200条记录和customer表中的599条记录存放在一个临时表中，然后再从临时表中取出前20条。</p>
 
 <p>例子②，通过在UNION的两个子查询中分别加上一个LIMIT 20 来减少临时表中的数据： <br>
-<img src="./MysqlLearnOne_files/5860fe7a9965f62a56000019.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5860fe7a9965f62a56000019.png" alt="" title=""> <br>
 分析：这样中间的临时表只会包含40条记录。 <br>
 注意：从临时表中取出数据的顺序并不是一定的，所以如果想获得正确的顺序，还需要加上一个全局的ORDER BY 和LIMIT操作。</p>
 
@@ -1095,18 +1095,18 @@ MySQL通过关键字将SQL语句进行解析，并生成一颗对应的“解析
 
 <p>对于MIN()和MAX()查询，Mysql的优化做得并不好。 <br>
 例子： <br>
-<img src="./MysqlLearnOne_files/5861012d9965f62a5600001a.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5861012d9965f62a5600001a.png" alt="" title=""> <br>
 因为first_name字段上并没有索引，因此Mysql将会进行一次全表扫描。验证方法，通过SHOW STATUS的全表扫描计数器来验证这一点。 <br>
 优化方法：移除MIN()，使用LIMIT来将查询重写: <br>
-<img src="./MysqlLearnOne_files/586101e89965f62a5600001b.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/586101e89965f62a5600001b.png" alt="" title=""> <br>
 这个策略可以让Mysql扫描尽可能少的记录数。</p>
 
 <h4 id="title-21">6.5.9 Mysql不允许在同一个表上查询和更新</h4>
 
 <p>例子： <br>
-<img src="./MysqlLearnOne_files/5861036c9965f62a5600001c.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5861036c9965f62a5600001c.png" alt="" title=""> <br>
 解决方法：可以通过使用生成表的形式来绕过上面的限制，因为Mysql只会把这个表当作一个临时表来处理。如： <br>
-<img src="./MysqlLearnOne_files/586103bb9965f62a5600001d.png" alt="" title=""></p>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/586103bb9965f62a5600001d.png" alt="" title=""></p>
 
 <h3 id="title-22">6.6 查询优化器的提示（hint）</h3>
 
@@ -1121,12 +1121,12 @@ HIGH_PRIORITY和LOW_PRIORITY、DELAYED、STRAIGHT_JOIN、SQL_SMALL_RESULT和SQL_
 
 <p>简单的优化， <br>
 例子①： <br>
-<img src="./MysqlLearnOne_files/586106e99965f62a5600001e.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/586106e99965f62a5600001e.png" alt="" title=""> <br>
 分析：通过SHOW STATUS的结果看到需要扫描4097行数据。 <br>
 优化：条件反转 <br>
-<img src="./MysqlLearnOne_files/5861073a9965f62a5600001f.png" alt="" title=""> <br>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/5861073a9965f62a5600001f.png" alt="" title=""> <br>
 EXPLAIN验证： <br>
-<img src="./MysqlLearnOne_files/586107519965f62a56000020.png" alt="" title=""></p>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/586107519965f62a56000020.png" alt="" title=""></p>
 
 <p>例子②： <br>
 在一条查询中同时统计一个列不同值的数量： <br>
@@ -1162,7 +1162,7 @@ SELECT film.film_id,film.description FROM sakila.film INNER JOIN (SELECT film_id
 ) AS lim USING(film_id); <br>
 延迟关联将大大提升查询效率，它让Mysql扫描尽可能少的页面。如果预先知道了边界，也可以通过边界计算。 <br>
 例如，在一个位置上索引，并且预先计算出了边界值，上面的查询可改写为： <br>
-<img src="./MysqlLearnOne_files/58610aca9965f62a56000022.png" alt="" title=""></p>
+<img src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/58610aca9965f62a56000022.png" alt="" title=""></p>
 
 <h4 id="title-27">6.7.6 优化SQL_CALC_FOUND_ROWS</h4>
 
@@ -1199,7 +1199,7 @@ SELECT film.film_id,film.description FROM sakila.film INNER JOIN (SELECT film_id
 
 <!-- 该js供其它处理 -->
 <script src="file:///C:/Users/25065/Desktop/leanote-markdown.js"></script>
-<script src="./MysqlLearnOne_files/markdown-to-html.min.js"></script>
+<script src="https://qiushangwenyue.github.io/0feBlog/mysql/MysqlLearnOne_files/markdown-to-html.min.js"></script>
 <script>
 function init() {
 	markdownToHtml(document.getElementById('leanote-content-markdown').value, document.getElementById('leanote-content-html'), function(html) {
