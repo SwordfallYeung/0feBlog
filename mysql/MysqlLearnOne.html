@@ -195,10 +195,7 @@ kbd {
 <body><div id="MathJax_Message" style="display: none;"></div>
 
 	<div class="note-container">
-		<h1 class="title" id="leanote-title">MysqlLearnOne</h1>
 		<div class="content-container html" id="content-container">
-			<!-- 切换 -->
-			<div class="tab"><a id="tab-markdown">Markdown</a><a id="tab-html">HTML</a></div>
 			<textarea id="leanote-content-markdown">### 第六章 查询性能优化
 #### 6.1 为什么查询速度会变慢
 影响查询速度真正重要的是响应时间。查询花费的响应时间体现在不同的地方，包括网络，CPU计算，生成统计信息和执行计划、锁等待（互斥等待）等操作，尤其是向底层存储引擎检索数据的调用操作，这些调用需要在内存操作、CPU操作和内存不足时导致的I/O操作上消耗时间。根据存储引擎不同，可能还会产生大量的上下文切换以及系统调用。&lt;br/&gt;
