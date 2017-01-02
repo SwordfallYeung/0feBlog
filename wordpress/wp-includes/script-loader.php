@@ -59,8 +59,13 @@ function wp_default_scripts( &$scripts ) {
 		$guessurl = wp_guess_url();
 	}
 
-	$scripts->base_url = $guessurl;
-	$scripts->content_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
+//	$scripts->base_url = $guessurl;
+
+	//START  创建人：杨剑秋 创建时间：2016.12.31 17:59 测试php代码
+	$scripts->base_url = "https://qiushangwenyue.github.io/0feBlog/wordpress";
+//     END
+
+    $scripts->content_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
 	$scripts->default_version = get_bloginfo( 'version' );
 	$scripts->default_dirs = array('/wp-admin/js/', '/wp-includes/js/');
 
@@ -785,7 +790,11 @@ function wp_default_styles( &$styles ) {
 	if ( ! $guessurl = site_url() )
 		$guessurl = wp_guess_url();
 
-	$styles->base_url = $guessurl;
+//	$styles->base_url = $guessurl;
+	//START  创建人：杨剑秋 创建时间：2016.12.31 19:36 测试php代码
+	$styles->base_url = "https://qiushangwenyue.github.io/0feBlog/wordpress";
+//     END
+
 	$styles->content_url = defined('WP_CONTENT_URL')? WP_CONTENT_URL : '';
 	$styles->default_version = get_bloginfo( 'version' );
 	$styles->text_direction = function_exists( 'is_rtl' ) && is_rtl() ? 'rtl' : 'ltr';
@@ -1146,7 +1155,11 @@ function _print_scripts() {
 		$concat = str_split( $concat, 128 );
 		$concat = 'load%5B%5D=' . implode( '&load%5B%5D=', $concat );
 
-		$src = $wp_scripts->base_url . "/wp-admin/load-scripts.php?c={$zip}&" . $concat . '&ver=' . $wp_scripts->default_version;
+//		$src = $wp_scripts->base_url . "/wp-admin/load-scripts.php?c={$zip}&" . $concat . '&ver=' . $wp_scripts->default_version;
+
+//      START  创建人：杨剑秋 创建时间：2017.1.1 21:10
+		$src = get_option( 'siteurl' ) . "/wp-admin/load-scripts.php?c={$zip}&" . $concat . '&ver=' . $wp_scripts->default_version;
+
 		echo "<script type='text/javascript' src='" . esc_attr($src) . "'></script>\n";
 	}
 
@@ -1314,8 +1327,15 @@ function _print_styles() {
 		$concat = str_split( $concat, 128 );
 		$concat = 'load%5B%5D=' . implode( '&load%5B%5D=', $concat );
 
-		$href = $wp_styles->base_url . "/wp-admin/load-styles.php?c={$zip}&dir={$dir}&" . $concat . '&ver=' . $ver;
+//		echo $compress_css." "." ".$zip." ".$dir." ".$ver." ".$concat ;
+
+//		$href = $wp_styles->base_url . "/wp-admin/load-styles.php?c={$zip}&dir={$dir}&" . $concat . '&ver=' . $ver;
+
+//      START  创建人：杨剑秋 创建时间：2017.1.1 21:10
+		$href = get_option( 'siteurl' ) . "/wp-admin/load-styles.php?c={$zip}&dir={$dir}&" . $concat . '&ver=' . $ver;
+
 		echo "<link rel='stylesheet' href='" . esc_attr($href) . "' type='text/css' media='all' />\n";
+//		echo "<link rel='stylesheet' href='" . $href . "' type='text/css' media='all' />\n";
 
 		if ( !empty($wp_styles->print_code) ) {
 			echo "<style type='text/css'>\n";
