@@ -47,7 +47,7 @@
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
-         <div class="entry-content">
+	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
