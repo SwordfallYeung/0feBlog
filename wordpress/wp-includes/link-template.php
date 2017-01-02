@@ -3044,6 +3044,18 @@ function site_url( $path = '', $scheme = null ) {
 }
 
 /**
+ * 创建人：杨剑秋
+ * 创建时间：2017.1.1 20:25
+ * 功能介绍：重写 site_url方法
+ * @param string $path
+ * @param null $scheme
+ * @return mixed|void
+ */
+function site_url2( $path = '', $scheme = null ) {
+	return get_site_url2( null, $path, $scheme );
+}
+
+/**
  * Retrieves the URL for a given site where WordPress application files
  * (e.g. wp-blog-header.php or the wp-admin/ folder) are accessible.
  *
@@ -3085,6 +3097,39 @@ function get_site_url( $blog_id = null, $path = '', $scheme = null ) {
 	 *                             'login_post', 'admin', 'relative' or null.
 	 * @param int|null    $blog_id Site ID, or null for the current site.
 	 */
+	return apply_filters( 'site_url', $url, $path, $scheme, $blog_id );
+}
+
+/**
+ * 创建人：杨剑秋
+ * 创建时间：2017.1.1 20:25
+ * 功能介绍：重写 get_site_url方法，改变siteurl的路径
+ * @param null $blog_id
+ * @param string $path
+ * @param null $scheme
+ * @return mixed|void
+ */
+function get_site_url2( $blog_id = null, $path = '', $scheme = null ) {
+	if ( empty( $blog_id ) || !is_multisite() ) {
+//		$url = get_option( 'siteurl' );
+
+		//	START  创建人：杨剑秋 创建时间：2017.1.1 19:12
+		$url="https://qiushangwenyue.github.io/0feBlog/wordpress";
+//		echo $url;
+	} else {
+		switch_to_blog( $blog_id );
+//		$url = get_option( 'siteurl' );
+
+		//	START  创建人：杨剑秋 创建时间：2017.1.1 19:12
+		$url="https://qiushangwenyue.github.io/0feBlog/wordpress";
+		restore_current_blog();
+	}
+
+	$url = set_url_scheme( $url, $scheme );
+
+	if ( $path && is_string( $path ) )
+		$url .= '/' . ltrim( $path, '/' );
+
 	return apply_filters( 'site_url', $url, $path, $scheme, $blog_id );
 }
 
@@ -3144,7 +3189,7 @@ function get_admin_url( $blog_id = null, $path = '', $scheme = 'admin' ) {
  */
 function includes_url( $path = '', $scheme = null ) {
 	$url = site_url( '/' . WPINC . '/', $scheme );
-
+//    echo $url." url inc: ".WPINC." ";
 	if ( $path && is_string( $path ) )
 		$url .= ltrim($path, '/');
 
@@ -3161,6 +3206,22 @@ function includes_url( $path = '', $scheme = null ) {
 }
 
 /**
+ * 创建人：杨剑秋
+ * 创建时间：2017.1.1 20:25
+ * 功能介绍：重写 includes_url2
+ * @param string $path
+ * @param null $scheme
+ * @return mixed|void
+ */
+function includes_url2( $path = '', $scheme = null ) {
+	$url = site_url2( '/' . WPINC . '/', $scheme );
+	if ( $path && is_string( $path ) )
+		$url .= ltrim($path, '/');
+
+	return apply_filters( 'includes_url', $url, $path );
+}
+
+/**
  * Retrieves the URL to the content directory.
  *
  * @since 2.6.0
@@ -3169,6 +3230,7 @@ function includes_url( $path = '', $scheme = null ) {
  * @return string Content URL link with optional path appended.
  */
 function content_url( $path = '' ) {
+//	echo "wp_content ".WP_CONTENT_URL;
 	$url = set_url_scheme( WP_CONTENT_URL );
 
 	if ( $path && is_string( $path ) )
