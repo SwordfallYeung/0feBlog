@@ -2792,7 +2792,8 @@ function translate_smiley( $matches ) {
 	 * @param string $img        Filename for the smiley image.
 	 * @param string $site_url   Site URL, as returned by site_url().
 	 */
-	$src_url = apply_filters( 'smilies_src', includes_url( "images/smilies/$img" ), $img, site_url() );
+//	$src_url = apply_filters( 'smilies_src', includes_url( "images/smilies/$img" ), $img, site_url() );
+	$src_url = apply_filters( 'smilies_src', includes_url2( "images/smilies/$img" ), $img, site_url() );
 
 	return sprintf( '<img src="%s" alt="%s" class="wp-smiley" style="height: 1em; max-height: 1em;" />', esc_url( $src_url ), esc_attr( $smiley ) );
 }
@@ -5040,9 +5041,11 @@ function _print_emoji_detection_script() {
 	if ( SCRIPT_DEBUG ) {
 		$settings['source'] = array(
 			/** This filter is documented in wp-includes/class.wp-scripts.php */
-			'wpemoji' => apply_filters( 'script_loader_src', includes_url( "js/wp-emoji.js?$version" ), 'wpemoji' ),
+//			'wpemoji' => apply_filters( 'script_loader_src', includes_url( "js/wp-emoji.js?$version" ), 'wpemoji' ),
+			'wpemoji' => apply_filters( 'script_loader_src', includes_url2( "js/wp-emoji.js?$version" ), 'wpemoji' ),
 			/** This filter is documented in wp-includes/class.wp-scripts.php */
-			'twemoji' => apply_filters( 'script_loader_src', includes_url( "js/twemoji.js?$version" ), 'twemoji' ),
+//			'twemoji' => apply_filters( 'script_loader_src', includes_url( "js/twemoji.js?$version" ), 'twemoji' ),
+			'twemoji' => apply_filters( 'script_loader_src', includes_url2( "js/twemoji.js?$version" ), 'twemoji' ),
 		);
 
 		?>
@@ -5054,7 +5057,8 @@ function _print_emoji_detection_script() {
 	} else {
 		$settings['source'] = array(
 			/** This filter is documented in wp-includes/class.wp-scripts.php */
-			'concatemoji' => apply_filters( 'script_loader_src', includes_url( "js/wp-emoji-release.min.js?$version" ), 'concatemoji' ),
+//			'concatemoji' => apply_filters( 'script_loader_src', includes_url( "js/wp-emoji-release.min.js?$version" ), 'concatemoji' ),
+			'concatemoji' => apply_filters( 'script_loader_src', includes_url2( "js/wp-emoji-release.min.js?$version" ), 'concatemoji' ),
 		);
 
 		/*
