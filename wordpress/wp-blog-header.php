@@ -9,6 +9,8 @@ if ( !isset($wp_did_header) ) {
 
 	$wp_did_header = true;
 
+   //dirname(__FILE__) 根目录的意思
+
 	// Load the WordPress library.
 	require_once( dirname(__FILE__) . '/wp-load.php' );
 
