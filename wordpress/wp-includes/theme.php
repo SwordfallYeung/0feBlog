@@ -582,6 +582,8 @@ function get_theme_root_uri( $stylesheet_or_template = false, $theme_root = fals
 	if ( $stylesheet_or_template && ! $theme_root )
 		$theme_root = get_raw_theme_root( $stylesheet_or_template );
 
+//	echo $theme_root; 此时$theme_root 为themes; $stylesheet_or_template 为主题号twentyseventeen
+
 	if ( $stylesheet_or_template && $theme_root ) {
 		if ( in_array( $theme_root, (array) $wp_theme_directories ) ) {
 			// Absolute path. Make an educated guess. YMMV -- but note the filter below.
@@ -595,9 +597,11 @@ function get_theme_root_uri( $stylesheet_or_template = false, $theme_root = fals
 				$theme_root_uri = $theme_root;
 		} else {
 			$theme_root_uri = content_url( $theme_root );
+//			echo $theme_root_uri." last else";
 		}
 	} else {
 		$theme_root_uri = content_url( 'themes' );
+//		echo $theme_root_uri." else";
 	}
 
 	/**
@@ -609,7 +613,13 @@ function get_theme_root_uri( $stylesheet_or_template = false, $theme_root = fals
 	 * @param string $siteurl                WordPress web address which is set in General Options.
 	 * @param string $stylesheet_or_template Stylesheet or template name of the theme.
 	 */
-	return apply_filters( 'theme_root_uri', $theme_root_uri, get_option( 'siteurl' ), $stylesheet_or_template );
+//	return apply_filters( 'theme_root_uri', $theme_root_uri, get_option( 'siteurl' ), $stylesheet_or_template );
+
+//	echo $stylesheet_or_template;
+//	echo apply_filters( 'theme_root_uri', $theme_root_uri, "https://qiushangwenyue.github.io/0feBlog/wordpress", $stylesheet_or_template );
+	//	START  创建人：杨剑秋 创建时间：2017.1.1 19:36
+	return apply_filters( 'theme_root_uri', $theme_root_uri, "https://qiushangwenyue.github.io/0feBlog/wordpress", $stylesheet_or_template );
+
 }
 
 /**
