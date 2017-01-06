@@ -1240,6 +1240,9 @@ final class _WP_Editors {
 		<?php
 
 		$baseurl = self::$baseurl;
+
+		//杨剑秋 2017.1.6 15:48 修改
+		$baseurlFromGit="https://qiushangwenyue.github.io/0feBlog/wordpress/wp-includes/js/tinymce";
 		// Load tinymce.js when running from /src, else load wp-tinymce.js.gz (production) or tinymce.min.js (SCRIPT_DEBUG)
 		$mce_suffix = false !== strpos( get_bloginfo( 'version' ), '-src' ) ? '' : '.min';
 
@@ -1247,8 +1250,8 @@ final class _WP_Editors {
 			if ( $compressed ) {
 				echo "<script type='text/javascript' src='{$baseurl}/wp-tinymce.php?c=1&amp;$version'></script>\n";
 			} else {
-				echo "<script type='text/javascript' src='{$baseurl}/tinymce{$mce_suffix}.js?$version'></script>\n";
-				echo "<script type='text/javascript' src='{$baseurl}/plugins/compat3x/plugin{$suffix}.js?$version'></script>\n";
+				echo "<script type='text/javascript' src='{$baseurlFromGit}/tinymce{$mce_suffix}.js?$version'></script>\n";
+				echo "<script type='text/javascript' src='{$baseurlFromGit}/plugins/compat3x/plugin{$suffix}.js?$version'></script>\n";
 			}
 
 			echo "<script type='text/javascript'>\n" . self::wp_mce_translation() . "</script>\n";
