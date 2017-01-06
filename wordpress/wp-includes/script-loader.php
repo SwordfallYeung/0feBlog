@@ -1296,7 +1296,7 @@ function print_late_styles() {
 	 * @param bool $print Whether to print the 'late' styles. Default true.
 	 */
 	if ( apply_filters( 'print_late_styles', true ) ) {
-		_print_styles();
+//		_print_styles();
 	}
 
 	$wp_styles->reset();
