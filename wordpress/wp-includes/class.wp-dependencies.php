@@ -295,12 +295,16 @@ class WP_Dependencies {
 	public function enqueue( $handles ) {
 		foreach ( (array) $handles as $handle ) {
 			$handle = explode('?', $handle);
+//			echo $handle;
+//			print_r($handle[0]);
 			if ( !in_array($handle[0], $this->queue) && isset($this->registered[$handle[0]]) ) {
 				$this->queue[] = $handle[0];
+//				print_r($this->queue[0]);
 				if ( isset($handle[1]) )
 					$this->args[$handle[0]] = $handle[1];
 			}
 		}
+
 	}
 
 	/**
