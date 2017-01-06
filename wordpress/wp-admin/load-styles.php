@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'WPINC', 'wp-includes' );
 
+
+
 require( ABSPATH . 'wp-admin/includes/noop.php' );
 require( ABSPATH . WPINC . '/script-loader.php' );
 require( ABSPATH . WPINC . '/version.php' );
@@ -57,6 +59,8 @@ foreach ( $load as $handle ) {
 	}
 
 	$path = ABSPATH . $style->src;
+//	$path = "https://qiushangwenyue.github.io/0feBlog/wordpress/" . $style->src;
+//杨剑秋 2017.1.6 15:50 修改
 
 	if ( $rtl && ! empty( $style->extra['rtl'] ) ) {
 		// All default styles have fully independent RTL files.
@@ -64,6 +68,7 @@ foreach ( $load as $handle ) {
 	}
 
 	$content = get_file( $path ) . "\n";
+//	$content = get_RemoteFile( $path ) . "\n";
 
 	if ( strpos( $style->src, '/' . WPINC . '/css/' ) === 0 ) {
 		$content = str_replace( '../images/', '../' . WPINC . '/images/', $content );
@@ -73,6 +78,7 @@ foreach ( $load as $handle ) {
 	} else {
 		$out .= str_replace( '../images/', 'images/', $content );
 	}
+//	$out .="  styleSrc"."https://qiushangwenyue.github.io/0feBlog/wordpress" . $style->src;
 }
 
 header("Etag: $wp_version");
