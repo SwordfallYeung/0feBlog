@@ -421,6 +421,8 @@ function add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1) 
 function do_action($tag, $arg = '') {
 	global $wp_filter, $wp_actions, $wp_current_filter;
 
+//    echo $tag."/t".isset($wp_actions[$tag])."/n";
+
 	if ( ! isset($wp_actions[$tag]) )
 		$wp_actions[$tag] = 1;
 	else
