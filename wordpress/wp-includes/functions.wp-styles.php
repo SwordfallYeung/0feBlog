@@ -166,6 +166,8 @@ function wp_enqueue_style( $handle, $src = '', $deps = array(), $ver = false, $m
 
 	$wp_styles = wp_styles();
 
+//	echo $wp_styles->base_url." baseurl ".$handle;
+
 	if ( $src ) {
 		$_handle = explode('?', $handle);
 		$wp_styles->add( $_handle[0], $src, $deps, $ver, $media );
