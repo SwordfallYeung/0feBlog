@@ -267,7 +267,8 @@ if ( isset( $_GET['replytocom'] ) )
 // Login actions
 add_filter( 'login_head',          'wp_resource_hints',             8     );
 add_action( 'login_head',          'wp_print_head_scripts',         9     );
-add_action( 'login_head',          'print_admin_styles',            9     );
+//杨剑秋 2017.1.6 15:49 修改
+//add_action( 'login_head',          'print_admin_styles',            9     );
 add_action( 'login_head',          'wp_site_icon',                  99    );
 add_action( 'login_footer',        'wp_print_footer_scripts',       20    );
 add_action( 'login_init',          'send_frame_options_header',     10, 0 );
