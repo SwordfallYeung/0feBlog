@@ -160,12 +160,12 @@ img {
   Authorization:bce-auth-v1/AKIAIOSFODNN7EXAMPLE/1323937348/600//host;x-bce-date/=hQJj2pxypqJHQgU/BW1EZGUiNIYGhkQDf7tI6UgQ2qw= 
   Content-Length: 151 
   { 
-      “invokeId”: “d2iL60UT-7N8-22368”, 
-      “phoneNumber”: “13800138000”,
-      “templateCode”: “smsTpl:6nHdNumZ4ZtGaKO”, 
-      “contentVar”: { 
-          “others”: “你好”,
-          “code”: “7890” 
+      "invokeId": "d2iL60UT-7N8-22368", 
+      "phoneNumber": "13800138000",
+      "templateCode": "smsTpl:6nHdNumZ4ZtGaKO", 
+      "contentVar": { 
+          "others": "你好",
+          "code": "7890" 
       } 
   }
   </pre>
@@ -182,9 +182,9 @@ img {
   Content-Type: application/json; charset=utf-8
   x-bce-request-id：98f651c-e230-4810f-8092-f77506d848 
   { 
-      “code”: “1000”, 
-      “message”: “成功”, 
-      “requestId”: “98f651c-e230-4810f-8092-f77506d848”
+      "code": "1000", 
+      "message": "成功", 
+      "requestId": "98f651c-e230-4810f-8092-f77506d848"
   }
 </pre>
 </blockquote>
@@ -246,12 +246,12 @@ img {
               { 
                System.IO.Stream  receiveStream  = null; 
               System.IO.StreamReader responseReader = null; 
-              string timestamp =  DateTime.UtcNow.ToString(“yyyy-MM-ddTHH:mm:ssZ”); 
-             // string timestamp2 As String = Date.UtcNow.ToString(“yyyy-MM-dd”) 
-              string SecretAccessKey  = “申请所得”; 
-              string AccessKeyId  = “申请所得”; 
-           //   ’  Dim authStringPrefix As String = “bce-auth-v1/{accessKeyId}/{timestamp}/{expirationPeriodInSeconds}” 
-              string authStringPrefix = string.Format(“bce-auth-v1/{1}/{0}/1800”, timestamp, AccessKeyId);// ‘这里要改 
+              string timestamp =  DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"); 
+             // string timestamp2 As String = Date.UtcNow.ToString("yyyy-MM-dd") 
+              string SecretAccessKey  = "申请所得"; 
+              string AccessKeyId  = "申请所得"; 
+           //   ’  Dim authStringPrefix As String = "bce-auth-v1/{accessKeyId}/{timestamp}/{expirationPeriodInSeconds}"
+              string authStringPrefix = string.Format("bce-auth-v1/{1}/{0}/1800", timestamp, AccessKeyId);// ‘这里要改 
             //  ’ Dim CanonicalRequest As String = “HTTP Method + “\n” + CanonicalURI + “\n” + CanonicalQueryString + “\n” + CanonicalHeaders” 
               string CanonicalRequest = string.Format(“POST” + “\n” + “/v1/message” + “\n” + “\n” + “host:sms.bj.baidubce.com”); 
               string SigningKey  = GetSigningKeyByHMACSHA256HEX(SecretAccessKey, authStringPrefix); 
