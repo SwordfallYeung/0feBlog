@@ -252,30 +252,30 @@ img {
               string AccessKeyId  = "申请所得"; 
            //   ’  Dim authStringPrefix As String = "bce-auth-v1/{accessKeyId}/{timestamp}/{expirationPeriodInSeconds}"
               string authStringPrefix = string.Format("bce-auth-v1/{1}/{0}/1800", timestamp, AccessKeyId);// ‘这里要改 
-            //  ’ Dim CanonicalRequest As String = “HTTP Method + “\n” + CanonicalURI + “\n” + CanonicalQueryString + “\n” + CanonicalHeaders” 
-              string CanonicalRequest = string.Format(“POST” + “\n” + “/v1/message” + “\n” + “\n” + “host:sms.bj.baidubce.com”); 
+            //  ’ Dim CanonicalRequest As String = "HTTP Method + '\n' + CanonicalURI + '\n' + CanonicalQueryString + '\n' + CanonicalHeaders"
+              string CanonicalRequest = string.Format("POST" + "\n" + "/v1/message" + "\n" + "\n" + "host:sms.bj.baidubce.com"); 
               string SigningKey  = GetSigningKeyByHMACSHA256HEX(SecretAccessKey, authStringPrefix); 
               string Signature  = GetSignatureByHMACSHA256HEX(SigningKey, CanonicalRequest); 
               string Content = string.Empty; 
-            // Content = “{ \”templateId\”:” + smsinfo.TemplateId + “,\”receiver\”:” + smsinfo.Receiver + “,\”contentVar\”:” + smsinfo.ContentVar + “}”; 
-              Content = “{“+”\”“+”templateId”+”\”“+”:” + smsinfo.TemplateId + “,”+”\”“+”receiver”+”\”“+”:” + smsinfo.Receiver + “,”+”\”“+”contentVar”+”\”“+”:” + smsinfo.ContentVar + “}”; 
+            // Content = "{ \"templateId\":" + smsinfo.TemplateId + ",\"receiver\":"" + smsinfo.Receiver + ",\"contentVar\":" + smsinfo.ContentVar + "}"; 
+              Content = "{"+"\""+"templateId"+"\""+":" + smsinfo.TemplateId + ","+"\""+"receiver"+"\""+":" + smsinfo.Receiver + ","+"\""+"contentVar"+"\""+":" + smsinfo.ContentVar + "}"; 
              string temp = Content.ToString(); 
              byte[] ContentByte = Encoding.UTF8.GetBytes(temp); 
-              string GetOrderURL  = new  Uri(“http://sms.bj.baidubce.com/v1/message“).ToString();
+              string GetOrderURL  = new  Uri("http://sms.bj.baidubce.com/v1/message").ToString();
               System.Net.HttpWebRequest HttpWReq  =(WebRequest.Create(GetOrderURL) as System.Net.HttpWebRequest); 
-              //’ HttpWReq.Timeout = 600 * 1000 ”一分钟查询 
+              //’ HttpWReq.Timeout = 600 * 1000 "一分钟查询 
               HttpWReq.ContentLength = ContentByte.Length; 
-              HttpWReq.ContentType = “application/json”; 
-              HttpWReq.Headers[“x-bce-date”] = timestamp; 
-              HttpWReq.Headers[“Authorization”] = string.Format(“bce-auth-v1/{2}/{0}/1800/host/{1}”, timestamp, Signature, AccessKeyId); 
-              HttpWReq.Host = “sms.bj.baidubce.com”; 
-              HttpWReq.Method = “POST”;
+              HttpWReq.ContentType = "application/json"; 
+              HttpWReq.Headers["x-bce-date"] = timestamp; 
+              HttpWReq.Headers["Authorization"] = string.Format("bce-auth-v1/{2}/{0}/1800/host/{1}", timestamp, Signature, AccessKeyId); 
+              HttpWReq.Host = "sms.bj.baidubce.com"; 
+              HttpWReq.Method = "POST";
               HttpWReq.KeepAlive = false; 
               System.IO.Stream StreamData   = HttpWReq.GetRequestStream(); 
               StreamData.Write(ContentByte, 0, ContentByte.Length);
               StreamData.Close(); 
               System.Net.HttpWebResponse  HttpWRes  =(System.Net.HttpWebResponse) HttpWReq.GetResponse();
-              if (HttpWRes.Headers.Get(“Content-Encoding”) == “gzip” ){ 
+              if (HttpWRes.Headers.Get("Content-Encoding") == "gzip" ){ 
                   System.IO.Stream  zipStream = HttpWRes.GetResponseStream(); 
                   receiveStream = new  GZipStream(zipStream, CompressionMode.Decompress); 
               }else 
@@ -304,7 +304,7 @@ img {
             return Signature;} 
          //将字符串全部变成小写。 
           public string  HashEncode(byte[] hash) { 
-          return BitConverter.ToString(hash).Replace(“-“, “”).ToLower(); 
+          return BitConverter.ToString(hash).Replace("-", "").ToLower(); 
          }
           public string GetSHA256hash(string input , string _input_charset ){ 
           byte[] clearBytes  = Encoding.UTF8.GetBytes(input); 
@@ -312,7 +312,7 @@ img {
           sha256.ComputeHash(clearBytes); 
           byte[] hashedBytes = sha256.Hash; 
           sha256.Clear();
-          string   output = BitConverter.ToString(hashedBytes).Replace(“-“, “”).ToLower(); 
+          string   output = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower(); 
           return output; 
          } 
       } 
@@ -328,9 +328,9 @@ img {
 <pre class="brush: c-sharp;">
   protected void btntest_Click(object sender, EventArgs e) {  
             SMSInfo SMSinfo   = new  SMSInfo(); 
-            SMSinfo.TemplateId = “\”“+”短信模版”+”\”“; 
-            SMSinfo.Receiver = “[“+”\”“+手机号码+”\”“+”]”; 
-            SMSinfo.ContentVar = “{\”参数一\”:\”zhangsan \”,\”参数二\”:\”99999 \”,\”参数三\”:\”我是测试内容\”}”; 
+            SMSinfo.TemplateId = "\""+"短信模版"+"\""; 
+            SMSinfo.Receiver = "["+"\""+手机号码+"\""+"]"; 
+            SMSinfo.ContentVar = "{\"参数一\":\"zhangsan \",\"参数二\":\"99999 \",\"参数三\":\"我是测试内容\"}"; 
             BaiduSMSTest bdsms   = new  BaiduSMSTest(SMSinfo);
            string result  = bdsms.SendSMSWEBAPI(); 
       } 
