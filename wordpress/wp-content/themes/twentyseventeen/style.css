@@ -1133,7 +1133,7 @@ td:last-child {
 --------------------------------------------------------------*/
 
 a {
-	color: #222;
+	/*color: #222;*/
 	text-decoration: none;
 }
 
@@ -1194,10 +1194,10 @@ a .nav-title,
 	transition: color 80ms ease-in, box-shadow 130ms ease-in-out, -webkit-box-shadow 130ms ease-in-out;
 }
 
-.entry-content a:focus,
-.entry-content a:hover,
-.entry-summary a:focus,
-.entry-summary a:hover,
+/*.entry-content a:focus,*/
+/*.entry-content a:hover,*/
+/*.entry-summary a:focus,*/
+/*.entry-summary a:hover,*/
 .widget a:focus,
 .widget a:hover,
 .site-footer .widget-area a:focus,
