@@ -26,3 +26,5 @@ http://shift-alt-ctrl.iteye.com/blog/1840385
 http://www.cnblogs.com/ygj0930/p/6544543.html
 
 http://www.cnblogs.com/linjiqin/archive/2013/05/30/3108188.html
+
+http://ifeve.com/java-transfer-queue/
