@@ -28,3 +28,5 @@ http://www.cnblogs.com/ygj0930/p/6544543.html
 http://www.cnblogs.com/linjiqin/archive/2013/05/30/3108188.html
 
 http://ifeve.com/java-transfer-queue/
+
+http://blog.csdn.net/imzoer/article/details/9751591
