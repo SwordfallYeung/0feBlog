@@ -30,3 +30,5 @@ http://www.cnblogs.com/linjiqin/archive/2013/05/30/3108188.html
 http://ifeve.com/java-transfer-queue/
 
 http://blog.csdn.net/imzoer/article/details/9751591
+
+http://blog.csdn.net/xh16319/article/details/17056767
