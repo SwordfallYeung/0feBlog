@@ -36,3 +36,6 @@ http://blog.csdn.net/xh16319/article/details/17056767
 http://www.concretepage.com/java/
 
 http://blog.163.com/silver9886@126/blog/static/359718622017818916446/
+
+JavaExample:
+https://www.programcreek.com/java-api-examples/index.php?source_dir=levelup-java-examples-master/src/test/java/com/levelup/java/util/DoubleSummaryStatisticsExample.java
