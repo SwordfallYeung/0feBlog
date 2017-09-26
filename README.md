@@ -42,3 +42,5 @@ https://www.programcreek.com/java-api-examples/index.php?source_dir=levelup-java
 
 Java教程例子（国外）
 Java.util packages:https://www.tutorialspoint.com/java/util/index.htm
+
+国外Java教程：https://www.javacodegeeks.com/2014/03/java-can-finally-join-strings.html
