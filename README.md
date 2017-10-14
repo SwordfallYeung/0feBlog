@@ -51,3 +51,5 @@ http://www.yangqq.com/web/25-blog/index.html
 ReactJs中文学习文档：http://www.react-cn.com/docs/getting-started.html
 
 AngularJs项目实例：https://github.com/EricTop3
+
+chrome跨域问题：http://www.cnblogs.com/kable/p/5622708.html
