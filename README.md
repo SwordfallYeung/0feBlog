@@ -53,3 +53,7 @@ ReactJs中文学习文档：http://www.react-cn.com/docs/getting-started.html
 AngularJs项目实例：https://github.com/EricTop3
 
 chrome跨域问题：http://www.cnblogs.com/kable/p/5622708.html
+
+<br/>
+树莓派:<br/>
+http://shumeipai.nxez.com/page/8<br/>
