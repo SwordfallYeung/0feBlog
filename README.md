@@ -57,3 +57,7 @@ chrome跨域问题：http://www.cnblogs.com/kable/p/5622708.html
 <br/>
 树莓派:<br/>
 http://shumeipai.nxez.com/page/8<br/>
+
+<br/>
+博客模板<br/>
+https://www.ezlippi.com/archives/<br/>
