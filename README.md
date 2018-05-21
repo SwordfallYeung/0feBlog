@@ -72,3 +72,6 @@ https://jingyan.baidu.com/article/3c48dd34491d47e10be358b8.html<br/>
 <br/>
 大数据学习资料：<br/>
 https://www.pipipan.com/dir/15166809-24668733-e9b4ca/24671477/<br/>
+
+office2016自定义组件安装<br/>
+http://www.jb51.net/office/400628.html
